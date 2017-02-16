@@ -1,0 +1,26 @@
+var mongoose = require('mongoose');
+
+var Schema = mongoose.Schema;
+
+var UserSchema = new Schema({
+  name: {
+    type:String,
+    required: [true, 'User name is not provided.'],
+    minlength: [3, 'User name is not at least 3 characters in length.'],
+    maxlength: [10, 'User name cannot exceed 10 characters in length.']
+  },
+  scores: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Score'
+  }],
+  questions: [{
+  type: Schema.Types.ObjectId,
+  ref: 'Question'
+  }],
+},
+{
+  timestamps: true
+});
+
+
+mongoose.model('User', UserSchema);

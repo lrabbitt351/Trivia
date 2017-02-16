@@ -1,0 +1,28 @@
+<div ng-controller="userController">
+  <h1>Welcome, {{curUser.name}}</h1>
+  <a href="#!/dash">Home</a> | <a href="#!/new_question">Add a Question</a> | <a href="/logout">Logout</a>
+  <div style="border: solid black; width: 300px;">
+    <button style="margin-left: 40%"><a href="#!/letsPlay">Play!</a></button>
+    <p>Click the button above to start the trivia game.</p>
+  </div>
+  <br>
+  Search: <input type="text" name="" value="" ng-model="searchText.score">
+  <br>
+  <br>
+  <table style="border: solid black;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat= "score in scores | filter:searchText | orderBy:'-score'">
+        <td>{{score._user.name}}</td>
+        <td>{{score.score}}/3</td>
+        <td>{{((score.score/3)*100).toFixed(2)}}%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

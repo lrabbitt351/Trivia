@@ -1,0 +1,25 @@
+{
+  "name": "3bb",
+  "authors": [
+    "Leo Rabbitt <rabbitt.leo@gmail.com>"
+  ],
+  "description": "Front-end components for app.",
+  "main": "index.html",
+  "keywords": [
+    "MEAN",
+    "Angular.js"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-route": "^1.6.1"
+  }
+}

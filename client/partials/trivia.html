@@ -1,0 +1,34 @@
+<style>
+textarea {display: block;}
+</style>
+<div ng-controller="userController">
+  <div ng-controller="questionController">
+    <h3>Hi, {{curUser.name}}!</h3>
+    <p>Choose an answer for each of the questions and submit the test once done. Good luck!</p>
+    <p ng-repeat="error in errors" style="color: red">{{error}}</p>
+    <form ng-submit ="answerTrivia()">
+        <div style="border: solid black;">
+          <p>1: {{randomQuestion1.question}}</p>
+          <input type="radio" ng-model="answer.a1" name="a1" value="{{randomQuestionAnswers1[0]}}"> {{randomQuestionAnswers1[0]}}
+          <input type="radio" ng-model="answer.a1" name="a2" value="{{randomQuestionAnswers1[1]}}"> {{randomQuestionAnswers1[1]}}
+          <input type="radio" ng-model="answer.a1" name="a3" value="{{randomQuestionAnswers1[2]}}"> {{randomQuestionAnswers1[2]}}
+        </div>
+        <br>
+        <div style="border: solid black;">
+          <p>2: {{randomQuestion2.question}}</p>
+          <input type="radio" ng-model="answer.a2" name="b1" value="{{randomQuestionAnswers2[0]}}"> {{randomQuestionAnswers2[0]}}
+          <input type="radio" ng-model="answer.a2" name="b2" value="{{randomQuestionAnswers2[1]}}"> {{randomQuestionAnswers2[1]}}
+          <input type="radio" ng-model="answer.a2" name="b3" value="{{randomQuestionAnswers2[2]}}"> {{randomQuestionAnswers2[2]}}
+        </div>
+        <br>
+        <div style="border: solid black;">
+          <p>3: {{randomQuestion3.question}}</p>
+          <input type="radio" ng-model="answer.a3" name="c1" value="{{randomQuestionAnswers3[0]}}"> {{randomQuestionAnswers3[0]}}
+          <input type="radio" ng-model="answer.a3" name="c2" value="{{randomQuestionAnswers3[1]}}"> {{randomQuestionAnswers3[1]}}
+          <input type="radio" ng-model="answer.a3" name="c3" value="{{randomQuestionAnswers3[2]}}"> {{randomQuestionAnswers3[2]}}
+        </div>
+        <br>
+      <input type="submit" name="" value="Submit"> | <button type="button" name="button"><a href="#!/dash">Cancel</a></button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<style>
+textarea {display: block;}
+</style>
+<div ng-controller="userController">
+  <div ng-controller="questionController">
+    <a href="#!/dash">Home</a> | <a href="/logout">Logout</a>
+    <form ng-submit ="addQuestion()">
+      <h1>New Question</h1>
+      <p ng-repeat="error in errors" style="color: red">{{error}}</p>
+      Question: <textarea name="name" rows="8" cols="80" ng-model="newQuestion.question"></textarea>
+      Correct Answer: <textarea name="name" rows="8" cols="80" ng-model="newQuestion.correctAnswer"></textarea>
+      Fake Answer 1: <textarea name="name" rows="8" cols="80" ng-model="newQuestion.wrongAnswer1"></textarea>
+      Fake Answer 2: <textarea name="name" rows="8" cols="80" ng-model="newQuestion.wrongAnswer2"></textarea>
+      <input type="submit" name="" value="Submit"> | <button type="button" name="button"><a href="#!/dash">Cancel</a></button>
+    </form>
+  </div>
+</div>
